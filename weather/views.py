@@ -17,40 +17,5 @@ def index(request):
 
     print(city_weather)
 
-    return render(request, 'weather/weather.html')
-
-    # response object for hard-coded city
-    # {"coord":
-    #     {
-    #         "lon":-84.39,
-    #         "lat":33.75
-    #     },
-    #     "weather":
-    #         [{"id":800,
-    #         "main":"Clear",
-    #         "description":"clear sky",
-    #         "icon":"01d"}],
-    #     "base":"stations",
-    #     "main":
-    #         {"temp":77.18,
-    #         "pressure":1024,
-    #         "humidity":69,
-    #         "temp_min":73,
-    #         "temp_max":82},
-    #     "visibility":16093,
-    #     "wind":
-    #         {"speed":3.94,
-    #         "deg":142.921},
-    #     "clouds":
-    #         {"all":1},
-    #     "dt":1556639005,
-    #     "sys":
-    #         {"type":1,
-    #         "id":4155,
-    #         "message":0.0111,
-    #         "country":"US",
-    #         "sunrise":1556621396,
-    #         "sunset":1556669967},
-    #     "id":4180439,"name":"Atlanta",
-    #     "cod":200
-    # }
+    context = {'city_weather' : city_weather}
+    return render(request, 'weather/weather.html', context)
