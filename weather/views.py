@@ -9,6 +9,9 @@ def index(request):
     # city = 'Atlanta'
 
     if request.method == 'POST':
+        # print(request.POST)
+        form = CityForm(request.POST)
+        form.save()
         pass 
 
     form = CityForm()
@@ -30,7 +33,7 @@ def index(request):
 
         weather_data.append(city_weather)
         
-    print(weather_data)
+    # print(weather_data)
 
     context = {'weather_data' : weather_data, 'form' : form}
     return render(request, 'weather/weather.html', context)
