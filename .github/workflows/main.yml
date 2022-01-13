@@ -12,9 +12,5 @@ jobs:
         
       - name: Echo the branch name
         run: echo "Branch name ${GIT_BRANCH_NAME}"
-        
-      - name: Echo the GITHUB_REF
-        run: echo "Branch name ${GITHUB_REF}"GITHUB_EVENT_PATH
-        
-      - name: Echo the GITHUB_EVENT_PATH
-        run: echo "Branch name ${GITHUB_EVENT_PATH}"        
+      - name: Echo the PR number
+        run: echo "Branch name $(jq --raw-output .pull_request.number "$GITHUB_EVENT_PATH")"       
