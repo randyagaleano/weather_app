@@ -1,10 +1,10 @@
 name: Testing branch info
 
-on: 
-  workflow_dispatch:
+on: [push, pull_request]
 
 env:
   PR_NUMBER: ${{ github.event.pull_request.number }}
+  PR_NUMBER_URL: https://he-members-staging-pr-${{ github.event.pull_request.number }}.herokuapp.com
 
 jobs:
   main_job:
@@ -12,4 +12,5 @@ jobs:
     steps:
       - name: view the PR number
         run: |
-          echo "PR number = ${{ env.PR_NUMBER }}"    
+          echo "PR number = ${{ github.event.pull_request.number }}"
+          echo "URL = ${{ env.PR_NUMBER_URL }}"  
