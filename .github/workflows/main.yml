@@ -13,5 +13,5 @@ jobs:
       - name: Echo the branch name
         run: echo "Branch name ${GIT_BRANCH_NAME}"
       - name: Echo the PR number
-        run:  echo ::set-env name=PULL_NUMBER::$(echo "$GITHUB_REF" | awk -F / '{print $3}')
+        run:  echo ${{ github.event.number }}
     
