@@ -9,5 +9,7 @@ Users retreive temperature and weather description once call is made:
 ![](weather-app-gif1.gif)
 
 ![](weather-app-gif2.gif)
+
+Testing PR Action
 ---
 Randy Galeano | 2019
