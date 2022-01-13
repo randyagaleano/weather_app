@@ -12,4 +12,6 @@ jobs:
       - name: Echo the branch name
         run: echo "Branch name ${GIT_BRANCH_NAME}"GITHUB_REF
       - name: Echo the GITHUB_REF
-        run: echo "Branch name ${GITHUB_REF}"
+        run: echo "Branch name ${GITHUB_REF}"GITHUB_EVENT_PATH
+      - name: Echo the GITHUB_REF
+        run: echo "Branch name ${GITHUB_EVENT_PATH}"        
